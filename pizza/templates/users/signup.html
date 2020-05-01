@@ -1,0 +1,45 @@
+{% block body %}
+<h1>Hello Please Sign Up!</h1>
+<form action="{% url 'signup' %}" method="post">
+    {% csrf_token %}
+    <ul>
+        <Text>
+            User name
+        </Text>
+
+        <input name = "username" type = "text"/>
+    </ul>
+
+    <ul>
+        <Text>
+            E-mail
+        </Text>
+
+        <input name = "E-mail" type = "text"/>
+    </ul>
+
+    <ul>
+        <Text>
+            Phone Number
+        </Text>
+
+        <input name = "Phone Number" type = "text"/>
+    </ul>
+
+    <ul>
+        <Text>
+            Password
+        </Text>
+
+        <input name = "Password" type = "password"/>
+    </ul>
+
+    <ul>
+        <Text>
+            Retype Password
+        </Text>
+        
+        <input name = "Password" type = "password"/>
+    </ul>
+</form>
+{% endblock %}

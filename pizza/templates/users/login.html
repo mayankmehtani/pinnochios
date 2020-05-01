@@ -1,0 +1,38 @@
+{% load static %}
+<html>
+    <head>
+        <style>
+            #main {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                min-height: 70vh;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id = "main">
+            <img src="https://cdn.clipart.email/e0538c3a15f0b0940682455074ba9c4c_italy-pizza-clipart_2000-1761.png" height = "105" width = "122"/>
+            <h1>
+                <center> 
+                    Welcome to Pinnocio's! Please Login
+                </center>
+            </h1>
+
+            <div>
+                <center>
+                    <form action="{% url 'login' %}" method="post">
+                        {% csrf_token %}
+                        <input name="username" type="text"/>
+                        <input name="password" type="password"/>
+                        <input type="submit" value="Login"/>
+                    </form>
+                    <p> New User? Sign Up - <a href="signup ">Here!</a></p>
+                </center>
+            </div>
+        </div>
+    </body>
+</html>

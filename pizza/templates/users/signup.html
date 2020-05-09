@@ -1,45 +1,55 @@
 {% block body %}
-<h1>Hello Please Sign Up!</h1>
-<form action="{% url 'signup' %}" method="post">
-    {% csrf_token %}
-    <ul>
-        <Text>
-            User name
-        </Text>
+	<style>
+		form {
+			width : 40%
+		}
 
-        <input name = "username" type = "text"/>
-    </ul>
+		body {
+			padding-top: 1%;
+			padding-left: 5%;
+		}
+	</style>
 
-    <ul>
-        <Text>
-            E-mail
-        </Text>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+	
+	<body>
+		<h1>Sign Up for Pizza!</h1>
 
-        <input name = "E-mail" type = "text"/>
-    </ul>
+		<form width = "200px" method = "POST" action =  "/signup">
+			{% csrf_token %}
+				<div class="form-group">
+					<label for="exampleInputEmail1">Email Address</label>
+					<input type = "email" name="email" class="form-control" aria-describedby="emailHelp"
+					placeholder="Enter email">
+				</div>
 
-    <ul>
-        <Text>
-            Phone Number
-        </Text>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Phone Number</label>
+					<input name="phone_number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+					placeholder="Enter your phone number">
+				</div>
 
-        <input name = "Phone Number" type = "text"/>
-    </ul>
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input name="username" id="username" class="form-control" placeholder="Enter username">
+				</div>
+				
+				<div class="form-group">
+					<label for="exampleInputPassword1">Password</label>
+					<input type = "password" name="password" class="form-control" placeholder="Password">
+				</div>
 
-    <ul>
-        <Text>
-            Password
-        </Text>
-
-        <input name = "Password" type = "password"/>
-    </ul>
-
-    <ul>
-        <Text>
-            Retype Password
-        </Text>
-        
-        <input name = "Password" type = "password"/>
-    </ul>
-</form>
+				<div class="form-group">
+					<label for="">Password Confirmation</label>
+					<input type = "password" name="password_confirm" class="form-control" placeholder="Password">
+				</div>
+				
+				<button type="submit" class="btn btn-primary" > Submit </button>
+			
+		</form>
+	</body>
 {% endblock %}

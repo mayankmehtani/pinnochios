@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users',
     'orders.apps.OrdersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -68,8 +69,8 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL = 'users.User'
 WSGI_APPLICATION = 'pizza.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases

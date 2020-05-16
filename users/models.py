@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 class MyAccountManager(BaseUserManager):
-    def create_user(self, username, email, phone, full_name, password = None):
+    def create_user(self, username, email, phone, password = None):
         if not username:
             raise ValueError("Must have a username!")
         elif not email:
@@ -14,10 +14,10 @@ class MyAccountManager(BaseUserManager):
             username = username,
             phone = phone,
             email = email,
-            full_name = full_name
         )
 
         user.set_password(password)
+        user.is_active = True
         user.save(using = self._db)
         return user
 
@@ -29,6 +29,7 @@ class MyAccountManager(BaseUserManager):
             full_name = full_name,
             password = password
         )
+
         user.is_active = True
         user.is_admin = True
         user.is_staff = True
@@ -48,7 +49,7 @@ class User(AbstractBaseUser):
     is_superuser = models.BooleanField(default = False)
 
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['password','full_name','email','phone']
+    REQUIRED_FIELDS = ['password','email','phone']
 
     objects = MyAccountManager()
 

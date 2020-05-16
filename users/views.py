@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from . import forms
 from . import models
+#from models import User 
 
 def index(request):
     if not request.user.is_authenticated:
@@ -14,6 +15,9 @@ def index(request):
         "user": request.user
     }
     return render(request, "users/user.html", context)
+
+def menu(request):
+    return render(request, "users/menu.html")
 
 def login_view(request):
     if request.user.is_authenticated:
@@ -34,15 +38,17 @@ def login_view(request):
 def signup_view(request):
     if request.method == "GET":
         return render(request, "users/signup.html")
-    
+
+def register(request):
     email = request.POST["email"]
     phone_number = request.POST['phone_number']
     username = request.POST['username']
     password = request.POST["password"]
     password_confirm = request.POST["password_confirm"]
+    user = models.User.objects.create_user(username, email, phone_number, password)
+    login(request, user)
+    return HttpResponseRedirect(reverse("index"))
 
-    return HttpResponse("<h1>" + request.POST["email"] + "</h1>")
-    
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("index"))

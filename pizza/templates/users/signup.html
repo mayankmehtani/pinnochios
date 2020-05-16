@@ -19,7 +19,7 @@
 	<body>
 		<h1>Sign Up for Pizza!</h1>
 
-		<form width = "200px" method = "POST" action =  "/signup">
+		<form width = "200px" method = "POST" action =  "{% url 'register' %}">
 			{% csrf_token %}
 				<div class="form-group">
 					<label for="exampleInputEmail1">Email Address</label>
@@ -49,7 +49,6 @@
 				</div>
 				
 				<button type="submit" class="btn btn-primary" > Submit </button>
-			
 		</form>
 	</body>
 {% endblock %}

@@ -9,22 +9,31 @@ from . import models
 
 def index(request):
     if not request.user.is_authenticated:
-        return render(request, "users/login.html")
+        return render(request, "login.html")
     
     context = {
         "user": request.user
     }
-    return render(request, "users/user.html", context)
+    return render(request, "user.html", context)
 
 def menu(request):
-    return render(request, "users/menu.html")
+    return render(request, "menu.html")
+
+def salad(request):
+    return render(request, "salad.html")
+
+def pasta(request):
+    return render(request, "pasta.html")
+
+def subs(request):
+    return render(request, "subs.html")
 
 def login_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect(reverse("index"))
 
     if request.method == "GET":
-        return render(request, "users/login.html" )
+        return render(request, "login.html" )
     
     username = request.POST["username"]
     password = request.POST["password"]
@@ -37,7 +46,7 @@ def login_view(request):
 
 def signup_view(request):
     if request.method == "GET":
-        return render(request, "users/signup.html")
+        return render(request, "signup.html")
 
 def register(request):
     email = request.POST["email"]

@@ -1,0 +1,120 @@
+{% extends "menu.html" %}
+{% block content %}
+    <style>
+        text.menu-item {
+            color: green;
+            display: block;
+        }
+
+        div.menu {
+            display: flex;
+        }
+
+        div.items {
+            flex: 2;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        table {
+            width: 450px;
+            margin-top: 40px;
+        }
+
+        table td{
+            height: 50px;
+        }
+
+        div.picture {
+            flex: 3.5;
+            display: flex;
+            height: 600px;
+        }
+
+        div.picture div{
+            margin:auto;
+        }
+
+        figcaption {
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    </style>
+
+    <div class = "menu">
+        <div class = "items">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Sub </th>
+                        <th> Small </th>
+                        <th> Large </th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>Cheese</td>
+                        <td>$6.50</td>
+                        <td>$7.95</td>
+                    </tr>
+                    <tr>
+                        <td>Italian</td>
+                        <td>$6.50</td>
+                        <td>$7.95</td>
+                    </tr>
+                    <tr>
+                        <td>Ham + Cheese</td>
+                        <td>$6.50</td>
+                        <td>$7.95</td>
+                    </tr>
+                    <tr>
+                        <td>Meatball</td>
+                        <td>$6.50</td>
+                        <td>$7.95</td>
+                    </tr>
+                    <tr>
+                        <td>Tuna</td>
+                        <td>$6.50</td>
+                        <td>$7.95</td>
+                    </tr>
+                    <tr>
+                        <td>Turkey</td>
+                        <td>$7.50</td>
+                        <td>$8.50</td>
+                    </tr>
+                    <tr>
+                        <td>Chicken Parmigiana</td>
+                        <td>$7.50</td>
+                        <td>$8.50</td>
+                    </tr>
+                    <tr>
+                        <td>Eggplant Parmigiana</td>
+                        <td>$6.50</td>
+                        <td>$7.95</td>
+                    </tr>
+                    <tr>
+                        <td>Steak</td>
+                        <td>$6.50</td>
+                        <td>$7.95</td>
+                    </tr>
+                    <tr>
+                        <td>Steak + Cheese</td>
+                        <td>$6.95</td>
+                        <td>$8.50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class = "picture"> 
+            <div>
+                <img src = "https://s3-media0.fl.yelpcdn.com/bphoto/KylqCIOG1nH5ZI_lM5iPYA/o.jpg" width = 500px height = 300px/>
+                <figcaption> Steak and Cheese </figcaption>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

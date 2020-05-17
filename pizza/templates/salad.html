@@ -1,0 +1,110 @@
+{% extends "menu.html" %}
+{% block content %}
+    <style>
+        text.menu-item {
+            color: green;
+            display: block;
+        }
+
+        div.menu {
+            display: flex;
+        }
+
+        div.items {
+            flex: 2;
+            margin-left: 8px;
+            margin-top: 95px;
+        }
+
+        div.items div {
+            margin-bottom: 20px;
+        }
+
+        div.picture {
+            flex: 3.5;
+            display: flex;
+            height: 600px;
+        }
+
+        div.picture div{
+            margin:auto;
+        }
+
+        figcaption {
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    </style>
+
+    <div class = "menu">
+        <div class = "items">
+            <div>
+                <Text class = "menu-item">
+                    <span style="float:left;">
+                        Green Salad
+                    </span>
+                    <span style="float:right;text-align:right;">
+                        $6.25
+                    </span>
+                </Text>
+
+                <Text class = "description">
+                    <br>A simple salad of tomatoes, cucumbers, onion, lettuce and house dressing
+                </Text>
+            </div>
+
+            <div>
+                <Text class = "menu-item">
+                    <span style="float:left;">
+                        Greek Salad
+                    </span>
+                    <span style="float:right;text-align:right;">
+                        $8.25
+                    </span>
+                </Text>
+                <Text class = "description">
+                    <br>Pinnocio's signature salad. 
+                    Made with tomatoes, sliced kalamata olives, cucumbers, onions, lettuce, feta cheese and a lemon dressing
+                </Text>
+            </div>
+
+            <div>
+                <Text class = "menu-item">
+                    <span style="float:left;">
+                        Antipasto
+                    </span>
+                    <span style="float:right;">
+                        $8.25
+                    </span>
+                </Text>
+                <Text class = "description">
+                    <br>Greens and Meat!
+                    Made with roasted red peppers, cherry tomatoes, feta, olives, artichoke hearts, prosciutto & salami. Drizzled with our house dressing
+                </Text>
+            </div>
+
+            <div>
+                <Text class = "menu-item">
+                    <span style="float:left;">
+                        Tuna Salad
+                    </span>
+                    <span style="float:right;">
+                        $8.25
+                    </span>
+                </Text>
+                <Text class = "description">
+                    <br>Our garden salad topped with Tuna
+                </Text>
+            </div>
+        </div>
+
+        <div class = "picture"> 
+            <div>
+                <img src = "https://www.wellplated.com/wp-content/uploads/2019/07/Antipasto-Salad-recipe.jpg" width = 300px height = 370px/>
+                <figcaption> Antipasto </figcaption>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "menu.html" %}
+{% block content %}
+    <style>
+        text.menu-item {
+            color: red;
+            display: block;
+        }
+
+        div.menu {
+            display: flex;
+        }
+
+        div.items {
+            flex: 2;
+            margin-left: 10px;
+            margin-top: 100px;
+        }
+
+        div.menu-item {
+            padding-top: 5px;
+        }
+
+        div.menu-item text{
+            color: red;
+        }
+
+        div.picture {
+            flex: 3.5;
+            display: flex;
+            height: 600px;
+        }
+
+        div.picture div{
+            margin:auto;
+        }
+
+        figcaption {
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    </style>
+
+    <div class = "menu">
+        <div class = "items">
+            <h5 style = "display:flex; justify-content: center;">
+                Pastas
+            </h5>
+
+            <div>
+                <Text style = "color:red;">
+                    <span style="float:left;">
+                        Baked Ziti w/ Mozzarella
+                    </span>
+                    <span style="float:right;text-align:right;">
+                        $6.50 <br>
+                    </span>
+                </Text>
+            </div>
+
+            <div class = "menu-item">
+                <Text>
+                    <br>
+                    <span style="float:left;">
+                        Baked Ziti w/Meatballs
+                    </span>
+                    <span style="float:right;text-align:right;">
+                        $8.75
+                    </span>
+                </Text>
+            </div>
+
+            <div class = "menu-item">
+                <Text> 
+                    <br>
+                    <span style="float:left;">
+                        Baked Ziti w/Chicken
+                    </span>
+                    <span style="float:right;">
+                        $8.25
+                    </span>
+                </Text>
+            </div>
+        </div>
+
+        <div class = "picture"> 
+            <div>
+                <img src = "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F4557541.jpg" width = 520px height = 370px/>
+                <figcaption> Baked Ziti w/ Mozzarella </figcaption>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

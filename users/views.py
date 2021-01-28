@@ -5,7 +5,6 @@ from django.shortcuts import render
 from django.urls import reverse
 from . import forms
 from . import models
-#from models import User 
 
 def index(request):
     if not request.user.is_authenticated:

@@ -1,0 +1,43 @@
+text.menu-item {
+    color: red;
+    display: block;
+}
+
+div.menu {
+    display: flex;
+}
+
+div.items {
+    flex: 2;
+    margin-left: 10px;
+    margin-top: 100px;
+}
+
+div.menu-item {
+    padding-top: 5px;
+}
+
+div.menu-item text{
+    color: red;
+}
+
+div.picture {
+    flex: 3.5;
+    display: flex;
+    height: 600px;
+}
+
+div.picture div{
+    margin:auto;
+}
+
+figcaption {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+img {
+    width: 520px;
+    height: 370px;
+}

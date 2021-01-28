@@ -1,45 +1,7 @@
 {% extends "menu.html" %}
 {% block content %}
-    <style>
-        text.menu-item {
-            color: red;
-            display: block;
-        }
-
-        div.menu {
-            display: flex;
-        }
-
-        div.items {
-            flex: 2;
-            margin-left: 10px;
-            margin-top: 100px;
-        }
-
-        div.menu-item {
-            padding-top: 5px;
-        }
-
-        div.menu-item text{
-            color: red;
-        }
-
-        div.picture {
-            flex: 3.5;
-            display: flex;
-            height: 600px;
-        }
-
-        div.picture div{
-            margin:auto;
-        }
-
-        figcaption {
-            display:flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-    </style>
+{% load static %}
+    <link rel="stylesheet" href="{% static 'pasta.css' %}">
 
     <div class = "menu">
         <div class = "items">
@@ -85,10 +47,9 @@
 
         <div class = "picture"> 
             <div>
-                <img src = "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F4557541.jpg" width = 520px height = 370px/>
+                <img id="#pasta" src="{% static 'pasta.jpeg' %}"/>
                 <figcaption> Baked Ziti w/ Mozzarella </figcaption>
             </div>
         </div>
     </div>
-
 {% endblock %}

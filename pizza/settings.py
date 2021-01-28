@@ -41,6 +41,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+"""
+if DEBUG:
+    INSTALLED_APPS += [
+        'debug_toolbar',
+    ]
+    INTERNAL_IPS = ('127.0.0.1', )
+    DEBUG_TOOLBAR_CONFIG = {
+        "SHOW_TOOLBAR_CALLBACK" : lambda request: True,
+    }
+"""
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -119,4 +130,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "pizza", "static")
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [
+    os.path.join(STATIC_ROOT, "css"),
+    os.path.join(STATIC_ROOT, "typescript"),
+    os.path.join(STATIC_ROOT, "IMAGES")
+]

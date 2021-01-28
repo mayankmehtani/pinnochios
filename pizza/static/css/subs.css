@@ -1,0 +1,45 @@
+text.menu-item {
+    color: green;
+    display: block;
+}
+
+div.menu {
+    display: flex;
+}
+
+div.items {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+table {
+    width: 450px;
+    margin-top: 40px;
+}
+
+table td{
+    height: 50px;
+}
+
+div.picture {
+    flex: 3.5;
+    display: flex;
+    height: 600px;
+}
+
+div.picture div{
+    margin:auto;
+}
+
+figcaption {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+img {
+    width: 500px;
+    height: 300px;
+}

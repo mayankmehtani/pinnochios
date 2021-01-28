@@ -1,0 +1,67 @@
+h1 {
+    text-align : center;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    align-items:  space-evenly;
+}
+
+div.green {
+    display: flex;
+    justify-content: space-around;
+    width:33%;
+    background-color: green;
+}
+
+div.white {
+    display: flex;
+    justify-content: space-around;
+    width:33%;
+    background-color: white;
+}
+
+div.red {
+    display: flex;
+    justify-content: space-around;
+    width:33%;
+    background-color: red;
+}
+
+li {
+    float: left;
+    color: black;
+}
+
+div.green li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+div.red li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+div.white li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+div.pizza {
+    background-color: #111111;
+}

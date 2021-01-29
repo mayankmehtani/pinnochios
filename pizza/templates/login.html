@@ -1,31 +1,11 @@
 {% load static %}
 <html>
-    <head>
-        <style>
-            body {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                min-height: 70vh;
-            }
-
-            #main {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-            }
-        </style>
-    </head>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-	crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'login_style.css' %}">
 
     <body>
         <div id = "main">
@@ -38,15 +18,19 @@
 
             <div>
                 <center>
-                    <form action="{% url 'login' %}" method="post">
+                    <form action="{% url 'login' %}" method="post" onsubmit="return checkLoginFields();">
                         {% csrf_token %}
                         <input name="username" type="text"/>
                         <input name="password" type="password"/>
                         <input type="submit" value="Login"/>
                     </form>
-                    <p> New User? Sign Up - <a href="signup ">Here!</a></p>
+                    <p> New User? Sign Up - <a href="signup">Here!</a></p>
                 </center>
             </div>
         </div>
     </body>
 </html>
+
+<script type="text/typescript" src="{% static 'login.ts' %}"></script>
+<script src="https://rawgit.com/Microsoft/TypeScript/master/lib/typescriptServices.js"></script>
+<script src="https://rawgit.com/basarat/typescript-script/master/transpiler.js"></script>

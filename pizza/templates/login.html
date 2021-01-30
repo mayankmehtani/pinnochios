@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="{% static 'login_style.css' %}">
 
     <body>
-        <div id = "main">
+        <div id="main">
             <img src="https://cdn.clipart.email/e0538c3a15f0b0940682455074ba9c4c_italy-pizza-clipart_2000-1761.png" height = "105" width = "122"/>
             <h1>
-                <center> 
-                    Welcome to Pinocchio's!
+                <center>
+                    [[ title ]]
                 </center>
             </h1>
 
@@ -20,8 +20,8 @@
                 <center>
                     <form action="{% url 'login' %}" method="post" onsubmit="return checkLoginFields();">
                         {% csrf_token %}
-                        <input name="username" type="text"/>
-                        <input name="password" type="password"/>
+                        <input name="username" type="text" v-on:input="setUsernameValidity()"/>
+                        <input name="password" type="password" v-on:input="setPasswordValidity()"/>
                         <input type="submit" value="Login"/>
                     </form>
                     <p> New User? Sign Up - <a href="signup">Here!</a></p>
@@ -31,6 +31,7 @@
     </body>
 </html>
 
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 <script type="text/typescript" src="{% static 'login.ts' %}"></script>
 <script src="https://rawgit.com/Microsoft/TypeScript/master/lib/typescriptServices.js"></script>
 <script src="https://rawgit.com/basarat/typescript-script/master/transpiler.js"></script>

@@ -16,7 +16,10 @@ def index(request):
     return render(request, "user.html", context)
 
 def menu(request):
-    return render(request, "menu.html")
+    context = {
+        "user": request.user
+    }
+    return render(request, "menu.html", context)
 
 def salad(request):
     return render(request, "salad.html")

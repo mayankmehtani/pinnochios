@@ -18,10 +18,10 @@
 
             <div>
                 <center>
-                    <form action="{% url 'login' %}" method="post" onsubmit="return checkLoginFields();">
+                    <form action="{% url 'login' %}" method="post" v-on:submit='checkLoginFields'>
                         {% csrf_token %}
-                        <input name="username" type="text" v-on:input="setUsernameValidity()"/>
-                        <input name="password" type="password" v-on:input="setPasswordValidity()"/>
+                        <input name="username" placeholder="username" type="text" v-on:input="setUsernameValidityMessage"/>
+                        <input name="password" placeholder="password" type="password" v-on:input="setPasswordValidityMessage"/>
                         <input type="submit" value="Login"/>
                     </form>
                     <p> New User? Sign Up - <a href="signup">Here!</a></p>
@@ -31,7 +31,7 @@
     </body>
 </html>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 <script type="text/typescript" src="{% static 'login.ts' %}"></script>
 <script src="https://rawgit.com/Microsoft/TypeScript/master/lib/typescriptServices.js"></script>
 <script src="https://rawgit.com/basarat/typescript-script/master/transpiler.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>

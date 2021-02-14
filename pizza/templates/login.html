@@ -9,24 +9,8 @@
 
     <body>
         <div id="main">
-            <img src="https://cdn.clipart.email/e0538c3a15f0b0940682455074ba9c4c_italy-pizza-clipart_2000-1761.png" height = "105" width = "122"/>
-            <h1>
-                <center>
-                    [[ title ]]
-                </center>
-            </h1>
-
-            <div>
-                <center>
-                    <form action="{% url 'login' %}" method="post" v-on:submit='checkLoginFields'>
-                        {% csrf_token %}
-                        <input name="username" placeholder="username" type="text" v-on:input="setUsernameValidityMessage"/>
-                        <input name="password" placeholder="password" type="password" v-on:input="setPasswordValidityMessage"/>
-                        <input type="submit" value="Login"/>
-                    </form>
-                    <p> New User? Sign Up - <a href="signup">Here!</a></p>
-                </center>
-            </div>
+            <user-login>
+            </user-login>
         </div>
     </body>
 </html>
